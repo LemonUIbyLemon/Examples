@@ -70,7 +70,7 @@ public class Example : BaseScript
         // It's easy! You decide how to open it!
         // Let's see a couple of examples
         
-        // You can check if a specific control is checked
+        // You can check if a specific Control is pressed
         // NOTE: Controls and Keys are different things
         // You can see a full list of controls at https://docs.fivem.net/docs/game-references/controls/
         // Here, we use the Duck control, which is X on a keyboard and A/X on a controller
@@ -94,7 +94,7 @@ public class Example : BaseScript
     }
 
     // You can also register a console command
-    // This console command is called "menu" and does the same as the button press
+    // This console command is called "menu" and does the same as the Control press
 
     [Command("menu")]
     private void ConsoleCommand(int source, IList<object> args, string raw)

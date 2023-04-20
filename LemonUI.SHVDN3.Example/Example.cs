@@ -76,7 +76,7 @@ public class Example : Script
             menu.Visible = true;
         }
         
-        // You can also check if a specific control is checked
+        // You can check if a specific Control is pressed
         // NOTE: Controls and Keys are different things
         // You can see a full list of controls at https://docs.fivem.net/docs/game-references/controls/
         // Here, we use the Duck control, which is X on a keyboard and A/X on a controller
