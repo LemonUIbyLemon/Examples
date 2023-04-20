@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonUI.SHVDN3.Example", "LemonUI.SHVDN3.Example\LemonUI.SHVDN3.Example.csproj", "{3CAA3DD0-B69E-4D9B-88D5-B52E58351211}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LemonUI.FiveM.Example", "LemonUI.FiveM.Example\LemonUI.FiveM.Example.csproj", "{258AC38F-AFA3-4FD0-BE50-0D6F5F998B58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3CAA3DD0-B69E-4D9B-88D5-B52E58351211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CAA3DD0-B69E-4D9B-88D5-B52E58351211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CAA3DD0-B69E-4D9B-88D5-B52E58351211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{258AC38F-AFA3-4FD0-BE50-0D6F5F998B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258AC38F-AFA3-4FD0-BE50-0D6F5F998B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258AC38F-AFA3-4FD0-BE50-0D6F5F998B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258AC38F-AFA3-4FD0-BE50-0D6F5F998B58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
