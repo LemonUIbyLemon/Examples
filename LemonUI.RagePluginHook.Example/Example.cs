@@ -63,39 +63,44 @@ public static class Example
 
     private static void OnTick()
     {
-        // This is the most important thing you need to add to your tick event
-        // It draws the menus, does the calculations under the hood and more!
-        // Pretty neat, right?
-        pool.Process();
-        
-        // You might be thinking, how can we open the menu?
-        // It's easy! You decide how to open it!
-        // Let's see a couple of examples
-
-        // You can check if a specific Control is pressed
-        // NOTE: Controls and Keys are different things
-        // You can see a full list of controls at https://docs.fivem.net/docs/game-references/controls/
-        // Here, we use the Duck control, which is X on a keyboard and A/X on a controller
-        if (Game.IsControlJustPressed(0, GameControl.VehicleDuck))
+        // In RPH, we need to tell it to execute our game fiber infinitely
+        // This will make sure that it runs forever
+        while (true)
         {
-            // You might be thinking: What's going on over here?
-            // It's simple
-            // Because we have more than one menu, we check if ANY menu is open
-            // If any menu is open, we close them all
-            // If there are no menus open, we open the main menu
-            
-            if (pool.AreAnyVisible)
+            // This is the most important thing you need to add to your tick event
+            // It draws the menus, does the calculations under the hood and more!
+            // Pretty neat, right?
+            pool.Process();
+
+            // You might be thinking, how can we open the menu?
+            // It's easy! You decide how to open it!
+            // Let's see a couple of examples
+
+            // You can check if a specific Control is pressed
+            // NOTE: Controls and Keys are different things
+            // You can see a full list of controls at https://docs.fivem.net/docs/game-references/controls/
+            // Here, we use the Duck control, which is X on a keyboard and A/X on a controller
+            if (Game.IsControlJustPressed(0, GameControl.VehicleDuck))
             {
-                pool.HideAll();
+                // You might be thinking: What's going on over here?
+                // It's simple
+                // Because we have more than one menu, we check if ANY menu is open
+                // If any menu is open, we close them all
+                // If there are no menus open, we open the main menu
+
+                if (pool.AreAnyVisible)
+                {
+                    pool.HideAll();
+                }
+                else
+                {
+                    menu.Visible = true;
+                }
             }
-            else
-            {
-                menu.Visible = true;
-            }
+
+            // Remember that RPH uses Fibers, and fibers need to yield so they don't block 
+            GameFiber.Yield();
         }
-        
-        // Remember that RPH uses Fibers, and fibers need to yield so they don't block 
-        GameFiber.Yield();
     }
 
     // You can also register a console command
