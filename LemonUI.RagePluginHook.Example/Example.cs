@@ -57,13 +57,8 @@ public static class Example
         pool.Add(menu);
         pool.Add(submenu);
 
-        // Every GTA mods needs it's own Tick event, so let's make one
-        // Remember that RPH uses Fibers, and fibers need to yield so they don't block 
-        while (true)
-        {
-            OnTick();
-            GameFiber.Yield();
-        }
+        // Every GTA mods needs it's own Tick event, so let's make one with Fibers
+        GameFiber.StartNew(OnTick);
     }
 
     private static void OnTick()
@@ -98,6 +93,9 @@ public static class Example
                 menu.Visible = true;
             }
         }
+        
+        // Remember that RPH uses Fibers, and fibers need to yield so they don't block 
+        GameFiber.Yield();
     }
 
     // You can also register a console command
